@@ -1,0 +1,40 @@
+// ITERACIONES
+
+@for $i from 1 through 20 {
+    .column-#{$i*5} {
+        width: $i * 5%;
+    }
+}
+
+//------------------------------------------------------------------------------
+
+// EACH
+// $colors: red green blue yellow;
+
+// @each $color in $colors{
+//     .#{$color} {
+//         background: $color;
+//     }
+// }
+// -------------------------------------------------------------------------------
+
+// each con mapas------> clave y valor
+
+$colors :(
+    primary: yellow,
+    secondary: red,
+    tertiary: blue
+);
+
+@each $key, $value in $colors {
+    .button-#{$key} {
+        background: $value;
+    }
+}
+
+$breakpoints: (
+    small: 360px,
+    medium: 640px,
+    large: 1024px,
+    xlarge: 1400px
+);
